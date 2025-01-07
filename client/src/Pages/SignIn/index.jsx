@@ -5,7 +5,6 @@ import "./SignInPopup.css";
 import { myContext } from "../../App";
 import { useNavigate } from "react-router-dom";
 import authService from "../../services/authService";
-import cartService from "../../services/cartService";
 
 const SignIn = ({ show, onClose }) => {
     const [email, setEmail] = useState("");
@@ -33,24 +32,15 @@ const SignIn = ({ show, onClose }) => {
         }
 
         try {
+            // Corrected the login call to pass email and password directly
             const user = await authService.login(email, password);
-            const cart = user.cart || []; // Correctly retrieve cart data
-            context.setCart(cart); // Set cart in context
-            console.log("Login response:", user); // Log the response from the server
-            localStorage.setItem("token", user.token); // Store the token in localStorage
-            localStorage.setItem("user", JSON.stringify(user)); // Store user information in localStorage
-            context.setUser(user);
+            context.setUser (user);
             context.setIsLogin(true); // Update context with logged-in user
-
-            // Fetch cart items from the server
-            const cartData = await cartService.getCartItems(user.id); // Assuming user.id is available
-            context.setCart(cartData.items); // Update the context with fetched cart items
-
             alert("Login successful!");
             onClose(); // Close the popup
             navigate("/"); // Redirect to home page
         } catch (error) {
-            setError(error.response?.data?.message || "Invalid email or password."); // Provide specific error message
+            setError("Invalid email or password.");
         } finally {
             setIsLoading(false);
         }
