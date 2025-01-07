@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/cart';
+const API_URL = 'https://ecommerce-app-backend-v534.onrender.com/api/cart';
 
 // Function to add a product to the cart
 const addToCart = async (userId, productId, quantity) => {
