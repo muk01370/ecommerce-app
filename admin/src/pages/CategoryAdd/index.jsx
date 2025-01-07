@@ -19,7 +19,7 @@ const CategoryAdd = ({ isDarkmode, categoryId }) => {
         setLoading(true);
         try {
           const response = await fetch(
-            `http://localhost:5000/api/category/${categoryId}`
+            `https://ecommerce-app-frontend-7ifc.onrender.com/api/category/${categoryId}`
           );
           if (!response.ok) {
             throw new Error(`Error fetching category: ${response.statusText}`);
