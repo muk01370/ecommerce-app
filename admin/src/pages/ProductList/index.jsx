@@ -51,7 +51,7 @@ const ProductList = ({ isDarkmode }) => {
     setLoading(true);
     setError("");
     try {
-      const response = await fetch("http://localhost:5000/api/category");
+      const response = await fetch("https://ecommerce-app-frontend-7ifc.onrender.com/api/category");
       if (!response.ok) {
         throw new Error(`Error: ${response.statusText}`);
       }
