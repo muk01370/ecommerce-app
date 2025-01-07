@@ -31,7 +31,7 @@ const ProductZoom = ({ productId }) => {
   useEffect(() => {
     const fetchProductImages = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/products/${productId}`);
+        const response = await fetch(`https://ecommerce-app-backend-v534.onrender.com/api/products/${productId}`);
         if (!response.ok) {
           throw new Error(`Error: ${response.statusText}`);
         }
