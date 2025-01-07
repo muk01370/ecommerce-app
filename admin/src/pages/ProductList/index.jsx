@@ -110,8 +110,8 @@ const ProductList = ({ isDarkmode }) => {
     try {
       const response = await fetch(
         currentProduct
-          ? `http://localhost:5000/api/products/${currentProduct._id}`
-          : "http://localhost:5000/api/products/create",
+          ? `https://ecommerce-app-frontend-7ifc.onrender.com/api/products/${currentProduct._id}`
+          : "https://ecommerce-app-frontend-7ifc.onrender.com/api/products/create",
         {
           method: currentProduct ? "PUT" : "POST",
           headers: { "Content-Type": "application/json" },
@@ -144,7 +144,7 @@ const ProductList = ({ isDarkmode }) => {
   const deleteProduct = async (productId) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/products/${productId}`,
+        `https://ecommerce-app-frontend-7ifc.onrender.com/api/products/${productId}`,
         { method: "DELETE" }
       );
 
