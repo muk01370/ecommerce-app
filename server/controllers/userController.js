@@ -27,6 +27,7 @@ const registerUser = async (req, res) => {
             token: generateToken(user._id),
         });
     } catch (error) {
+        console.log("mukesh")
         res.status(500).json({ message: error.message });
     }
 };
