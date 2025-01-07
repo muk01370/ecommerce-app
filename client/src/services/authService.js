@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://ecommerce-app-backend-v534.onrender.com/api/users';
+const API_URL = 'https://ecommerce-app-backend-v534.onrender.com';
 
 const login = async (email, password) => {
   try {
