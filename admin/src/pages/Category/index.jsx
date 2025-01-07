@@ -30,7 +30,7 @@ const Category = ({ isDarkmode, setIsChecked }) => {
       setLoading(true);
       setError("");
       try {
-        const response = await fetch("https://ecommerce-app-frontend-7ifc.onrender.com/api/category");
+        const response = await fetch("https://ecommerce-app-backend-v534.onrender.com/api/category");
         if (!response.ok) {
           throw new Error(`Error: ${response.statusText}`);
         }
@@ -75,7 +75,7 @@ const Category = ({ isDarkmode, setIsChecked }) => {
 
   const deleteCategory = async (categoryId) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/category/${categoryId}`, {
+      const response = await fetch(`https://ecommerce-app-backend-v534.onrender.com/api/category/${categoryId}`, {
         method: "DELETE",
       });
       if (!response.ok) {
@@ -96,8 +96,8 @@ const Category = ({ isDarkmode, setIsChecked }) => {
     try {
       const response = await fetch(
         currentCategory
-          ? `http://localhost:5000/api/category/${currentCategory._id}` // Use _id for PUT
-          : "http://localhost:5000/api/category",
+          ? `https://ecommerce-app-backend-v534.onrender.com/api/category/${currentCategory._id}` // Use _id for PUT
+          : "https://ecommerce-app-backend-v534.onrender.com/api/category",
         {
           method: currentCategory ? "PUT" : "POST",
           headers: { "Content-Type": "application/json" },
