@@ -9,7 +9,6 @@ const Login = () => {
         {/* Header */}
         <div className="flex flex-col items-center mb-6">
           <div className="w-16 h-16 rounded-full flex items-center justify-center">
-            {/* <h1 className="text-white text-3xl font-bold">H</h1> */}
             <img src={logo} alt="logo"/>
           </div>
           <h2 className="mt-3 text-xl font-bold text-gray-700">
