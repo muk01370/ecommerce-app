@@ -27,7 +27,6 @@ const registerUser = async (req, res) => {
             token: generateToken(user._id),
         });
     } catch (error) {
-        console.log("mukesh")
         res.status(500).json({ message: error.message });
     }
 };
@@ -47,6 +46,7 @@ const loginUser = async (req, res) => {
                 token: generateToken(user._id),
             });
         } else {
+            console.log("mukesh");
             res.status(400).json({ message: 'Invalid email or password' });
         }
     } catch (error) {
