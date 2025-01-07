@@ -18,7 +18,7 @@ const HomeCat = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/category"); // Replace with your API endpoint
+        const response = await fetch("https://ecommerce-app-backend-v534.onrender.com/api/category"); // Replace with your API endpoint
         if (!response.ok) {
           throw new Error("Failed to fetch categories");
         }
