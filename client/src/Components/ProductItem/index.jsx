@@ -40,7 +40,7 @@ const ProductItem = ({ itemView }) => {
 
   const handleAddToCart = async (product) => {
     try {
-      const response = await fetch("http://localhost:5000/api/cart", {
+      const response = await fetch("https://ecommerce-app-backend-v534.onrender.com/api/cart", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -62,7 +62,7 @@ const ProductItem = ({ itemView }) => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/products");
+        const response = await fetch("https://ecommerce-app-backend-v534.onrender.com/api/products");
         if (!response.ok) throw new Error(`Error: ${response.statusText}`);
         const data = await response.json();
         setProducts(data || []);
