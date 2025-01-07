@@ -54,5 +54,5 @@ app.use((req, res, next) => {
 // Start the Server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`Server is running on https://ecommerce-app-frontend-7ifc.onrender.com:${PORT}`);
+  console.log(`Server is running on https://ecommerce-app-backend-v534.onrender.com:${PORT}`);
 });
