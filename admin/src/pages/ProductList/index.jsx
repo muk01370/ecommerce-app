@@ -51,7 +51,7 @@ const ProductList = ({ isDarkmode }) => {
     setLoading(true);
     setError("");
     try {
-      const response = await fetch("https://ecommerce-app-frontend-7ifc.onrender.com/api/category");
+      const response = await fetch("https://ecommerce-app-backend-v534.onrender.com/api/category");
       if (!response.ok) {
         throw new Error(`Error: ${response.statusText}`);
       }
@@ -110,8 +110,8 @@ const ProductList = ({ isDarkmode }) => {
     try {
       const response = await fetch(
         currentProduct
-          ? `https://ecommerce-app-frontend-7ifc.onrender.com/api/products/${currentProduct._id}`
-          : "https://ecommerce-app-frontend-7ifc.onrender.com/api/products/create",
+          ? `https://ecommerce-app-backend-v534.onrender.com/api/products/${currentProduct._id}`
+          : "https://ecommerce-app-backend-v534.onrender.com/api/products/create",
         {
           method: currentProduct ? "PUT" : "POST",
           headers: { "Content-Type": "application/json" },
@@ -144,7 +144,7 @@ const ProductList = ({ isDarkmode }) => {
   const deleteProduct = async (productId) => {
     try {
       const response = await fetch(
-        `https://ecommerce-app-frontend-7ifc.onrender.com/api/products/${productId}`,
+        `https://ecommerce-app-backend-v534.onrender.com/products/${productId}`,
         { method: "DELETE" }
       );
 
