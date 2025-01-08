@@ -29,7 +29,7 @@ const Header = () => {
     const goToCart = useCallback(() => navigate("/cart"), [navigate]);
 
     const handleLogout = useCallback(() => {
-        localStorage.removeItem("token");
+        localStorage.removeItem("userToken");
         localStorage.removeItem("user");
         context.setUser(null);
         context.setIsLogin(false);
