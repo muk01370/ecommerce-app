@@ -43,7 +43,7 @@ function App() {
         fetchCountries();
         
         // Check for token to set login status
-        const token = localStorage.getItem("token");
+        const token = localStorage.getItem("userToken");
         if (token) {
             const storedUser = JSON.parse(localStorage.getItem("user"));
             setUser(storedUser); // Restore user from local storage
