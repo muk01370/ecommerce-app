@@ -34,6 +34,7 @@ const SignIn = ({ show, onClose }) => {
         try {
             // Corrected the login call to pass email and password directly
             const user = await authService.login(email, password);
+            localStorage.setItem('userToken', user.token);
             context.setUser (user);
             context.setIsLogin(true); // Update context with logged-in user
             alert("Login successful!");
